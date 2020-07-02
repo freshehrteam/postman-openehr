@@ -1,0 +1,4 @@
+curl --location --request GET 'https://cdr.code4health.org/rest/openehr/v1/ehr/38afa732-9b08-4d0a-a858-8b8433708a58/composition/71e38611-124f-47c2-89d3-c860e7482bf5::82a0395f-6556-4fe3-990a-c265a9cd6cb4::1' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Basic ZWhyYmFzZS11c2VyOlN1cGVyU2VjcmV0UGFzc3dvcmQ='

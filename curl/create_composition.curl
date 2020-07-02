@@ -1,0 +1,588 @@
+curl --location --request POST 'https://cdr.code4health.org/rest/openehr/v1/ehr/38afa732-9b08-4d0a-a858-8b8433708a58/composition' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'PREFER: representation=minimal' \
+--header 'Authorization: Basic ODJhMDM5NWYtNjU1Ni00ZmUzLTk5MGEtYzI2NWE5Y2Q2Y2I0OiQyYSQxMCQ2MTlraQ==' \
+--header 'Cookie: _2269c=http://10.0.0.122:8080' \
+--data-raw '{
+    "_type": "COMPOSITION",
+    "name": {
+        "_type": "DV_TEXT",
+        "value": "DENWIS Observations"
+    },
+    "uid": {
+        "_type": "OBJECT_VERSION_ID",
+        "value": "71e38611-124f-47c2-89d3-c860e7482bf5::82a0395f-6556-4fe3-990a-c265a9cd6cb4::1"
+    },
+    "archetype_details": {
+        "_type": "ARCHETYPED",
+        "archetype_id": {
+            "_type": "ARCHETYPE_ID",
+            "value": "openEHR-EHR-COMPOSITION.encounter.v1"
+        },
+        "template_id": {
+            "_type": "TEMPLATE_ID",
+            "value": "DENWIS_Observations"
+        },
+        "rm_version": "1.0.4"
+    },
+    "archetype_node_id": "openEHR-EHR-COMPOSITION.encounter.v1",
+    "language": {
+        "_type": "CODE_PHRASE",
+        "terminology_id": {
+            "_type": "TERMINOLOGY_ID",
+            "value": "ISO_639-1"
+        },
+        "code_string": "en"
+    },
+    "territory": {
+        "_type": "CODE_PHRASE",
+        "terminology_id": {
+            "_type": "TERMINOLOGY_ID",
+            "value": "ISO_3166-1"
+        },
+        "code_string": "GB"
+    },
+    "category": {
+        "_type": "DV_CODED_TEXT",
+        "value": "event",
+        "defining_code": {
+            "_type": "CODE_PHRASE",
+            "terminology_id": {
+                "_type": "TERMINOLOGY_ID",
+                "value": "openehr"
+            },
+            "code_string": "433"
+        }
+    },
+    "composer": {
+        "_type": "PARTY_IDENTIFIED",
+        "name": "Alan Fish"
+    },
+    "context": {
+        "_type": "EVENT_CONTEXT",
+        "start_time": {
+            "_type": "DV_DATE_TIME",
+            "value": "2020-04-01T00:00:00Z"
+        },
+        "setting": {
+            "_type": "DV_CODED_TEXT",
+            "value": "other care",
+            "defining_code": {
+                "_type": "CODE_PHRASE",
+                "terminology_id": {
+                    "_type": "TERMINOLOGY_ID",
+                    "value": "openehr"
+                },
+                "code_string": "238"
+            }
+        },
+        "health_care_facility": {
+            "_type": "PARTY_IDENTIFIED",
+            "external_ref": {
+                "_type": "PARTY_REF",
+                "id": {
+                    "_type": "GENERIC_ID",
+                    "value": "9091",
+                    "scheme": "HOSPITAL-NS"
+                },
+                "namespace": "HOSPITAL-NS",
+                "type": "PARTY"
+            },
+            "name": "Opus VL Community Hospital"
+        }
+    },
+    "content": [
+        {
+            "_type": "OBSERVATION",
+            "name": {
+                "_type": "DV_TEXT",
+                "value": "DENWIS"
+            },
+            "archetype_details": {
+                "_type": "ARCHETYPED",
+                "archetype_id": {
+                    "_type": "ARCHETYPE_ID",
+                    "value": "openEHR-EHR-OBSERVATION.denwis.v0"
+                },
+                "rm_version": "1.0.4"
+            },
+            "archetype_node_id": "openEHR-EHR-OBSERVATION.denwis.v0",
+            "language": {
+                "_type": "CODE_PHRASE",
+                "terminology_id": {
+                    "_type": "TERMINOLOGY_ID",
+                    "value": "ISO_639-1"
+                },
+                "code_string": "en"
+            },
+            "encoding": {
+                "_type": "CODE_PHRASE",
+                "terminology_id": {
+                    "_type": "TERMINOLOGY_ID",
+                    "value": "IANA_character-sets"
+                },
+                "code_string": "UTF-8"
+            },
+            "subject": {
+                "_type": "PARTY_SELF"
+            },
+            "data": {
+                "_type": "HISTORY",
+                "name": {
+                    "_type": "DV_TEXT",
+                    "value": "Event Series"
+                },
+                "archetype_node_id": "at0001",
+                "origin": {
+                    "_type": "DV_DATE_TIME",
+                    "value": "2020-04-01T00:00:00Z"
+                },
+                "events": [
+                    {
+                        "_type": "POINT_EVENT",
+                        "name": {
+                            "_type": "DV_TEXT",
+                            "value": "Point in time"
+                        },
+                        "archetype_node_id": "at0002",
+                        "time": {
+                            "_type": "DV_DATE_TIME",
+                            "value": "2020-04-01T00:00:00Z"
+                        },
+                        "data": {
+                            "_type": "ITEM_TREE",
+                            "name": {
+                                "_type": "DV_TEXT",
+                                "value": "Tree"
+                            },
+                            "archetype_node_id": "at0003",
+                            "items": [
+                                {
+                                    "_type": "ELEMENT",
+                                    "name": {
+                                        "_type": "DV_TEXT",
+                                        "value": "Q1 Breathing"
+                                    },
+                                    "archetype_node_id": "at0028",
+                                    "value": {
+                                        "_type": "DV_ORDINAL",
+                                        "value": 1,
+                                        "symbol": {
+                                            "_type": "DV_CODED_TEXT",
+                                            "value": "Change in breathing",
+                                            "defining_code": {
+                                                "_type": "CODE_PHRASE",
+                                                "terminology_id": {
+                                                    "_type": "TERMINOLOGY_ID",
+                                                    "value": "local"
+                                                },
+                                                "code_string": "at0031"
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "_type": "ELEMENT",
+                                    "name": {
+                                        "_type": "DV_TEXT",
+                                        "value": "Breathing indicator"
+                                    },
+                                    "archetype_node_id": "at0062",
+                                    "value": {
+                                        "_type": "DV_CODED_TEXT",
+                                        "value": "Use accessory muscles",
+                                        "defining_code": {
+                                            "_type": "CODE_PHRASE",
+                                            "terminology_id": {
+                                                "_type": "TERMINOLOGY_ID",
+                                                "value": "local"
+                                            },
+                                            "code_string": "at0070"
+                                        }
+                                    }
+                                },
+                                {
+                                    "_type": "ELEMENT",
+                                    "name": {
+                                        "_type": "DV_TEXT",
+                                        "value": "Q2 Circulation"
+                                    },
+                                    "archetype_node_id": "at0033",
+                                    "value": {
+                                        "_type": "DV_ORDINAL",
+                                        "value": 0,
+                                        "symbol": {
+                                            "_type": "DV_CODED_TEXT",
+                                            "value": "No change in circulation",
+                                            "defining_code": {
+                                                "_type": "CODE_PHRASE",
+                                                "terminology_id": {
+                                                    "_type": "TERMINOLOGY_ID",
+                                                    "value": "local"
+                                                },
+                                                "code_string": "at0037"
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "_type": "ELEMENT",
+                                    "name": {
+                                        "_type": "DV_TEXT",
+                                        "value": "Circulation indicator"
+                                    },
+                                    "archetype_node_id": "at0071",
+                                    "value": {
+                                        "_type": "DV_CODED_TEXT",
+                                        "value": "Impaired perfusion",
+                                        "defining_code": {
+                                            "_type": "CODE_PHRASE",
+                                            "terminology_id": {
+                                                "_type": "TERMINOLOGY_ID",
+                                                "value": "local"
+                                            },
+                                            "code_string": "at0099"
+                                        }
+                                    }
+                                },
+                                {
+                                    "_type": "ELEMENT",
+                                    "name": {
+                                        "_type": "DV_TEXT",
+                                        "value": "Q3 Temperature"
+                                    },
+                                    "archetype_node_id": "at0038",
+                                    "value": {
+                                        "_type": "DV_ORDINAL",
+                                        "value": 1,
+                                        "symbol": {
+                                            "_type": "DV_CODED_TEXT",
+                                            "value": "Change in temperature",
+                                            "defining_code": {
+                                                "_type": "CODE_PHRASE",
+                                                "terminology_id": {
+                                                    "_type": "TERMINOLOGY_ID",
+                                                    "value": "local"
+                                                },
+                                                "code_string": "at0105"
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "_type": "ELEMENT",
+                                    "name": {
+                                        "_type": "DV_TEXT",
+                                        "value": "Temperature indicator"
+                                    },
+                                    "archetype_node_id": "at0076",
+                                    "value": {
+                                        "_type": "DV_CODED_TEXT",
+                                        "value": "Rigors",
+                                        "defining_code": {
+                                            "_type": "CODE_PHRASE",
+                                            "terminology_id": {
+                                                "_type": "TERMINOLOGY_ID",
+                                                "value": "local"
+                                            },
+                                            "code_string": "at0100"
+                                        }
+                                    }
+                                },
+                                {
+                                    "_type": "ELEMENT",
+                                    "name": {
+                                        "_type": "DV_TEXT",
+                                        "value": "Q4 Mentation"
+                                    },
+                                    "archetype_node_id": "at0043",
+                                    "value": {
+                                        "_type": "DV_ORDINAL",
+                                        "value": 1,
+                                        "symbol": {
+                                            "_type": "DV_CODED_TEXT",
+                                            "value": "Change in mentation",
+                                            "defining_code": {
+                                                "_type": "CODE_PHRASE",
+                                                "terminology_id": {
+                                                    "_type": "TERMINOLOGY_ID",
+                                                    "value": "local"
+                                                },
+                                                "code_string": "at0045"
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "_type": "ELEMENT",
+                                    "name": {
+                                        "_type": "DV_TEXT",
+                                        "value": "Mentation indicator"
+                                    },
+                                    "archetype_node_id": "at0078",
+                                    "value": {
+                                        "_type": "DV_CODED_TEXT",
+                                        "value": "Lethargic",
+                                        "defining_code": {
+                                            "_type": "CODE_PHRASE",
+                                            "terminology_id": {
+                                                "_type": "TERMINOLOGY_ID",
+                                                "value": "local"
+                                            },
+                                            "code_string": "at0101"
+                                        }
+                                    }
+                                },
+                                {
+                                    "_type": "ELEMENT",
+                                    "name": {
+                                        "_type": "DV_TEXT",
+                                        "value": "Q5 Agitation"
+                                    },
+                                    "archetype_node_id": "at0047",
+                                    "value": {
+                                        "_type": "DV_ORDINAL",
+                                        "value": 0,
+                                        "symbol": {
+                                            "_type": "DV_CODED_TEXT",
+                                            "value": "No agitation",
+                                            "defining_code": {
+                                                "_type": "CODE_PHRASE",
+                                                "terminology_id": {
+                                                    "_type": "TERMINOLOGY_ID",
+                                                    "value": "local"
+                                                },
+                                                "code_string": "at0048"
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "_type": "ELEMENT",
+                                    "name": {
+                                        "_type": "DV_TEXT",
+                                        "value": "Agitation indicator"
+                                    },
+                                    "archetype_node_id": "at0081",
+                                    "value": {
+                                        "_type": "DV_CODED_TEXT",
+                                        "value": "Anxious",
+                                        "defining_code": {
+                                            "_type": "CODE_PHRASE",
+                                            "terminology_id": {
+                                                "_type": "TERMINOLOGY_ID",
+                                                "value": "local"
+                                            },
+                                            "code_string": "at0104"
+                                        }
+                                    }
+                                },
+                                {
+                                    "_type": "ELEMENT",
+                                    "name": {
+                                        "_type": "DV_TEXT",
+                                        "value": "Q6 Pain"
+                                    },
+                                    "archetype_node_id": "at0050",
+                                    "value": {
+                                        "_type": "DV_ORDINAL",
+                                        "value": 1,
+                                        "symbol": {
+                                            "_type": "DV_CODED_TEXT",
+                                            "value": "Change in pain",
+                                            "defining_code": {
+                                                "_type": "CODE_PHRASE",
+                                                "terminology_id": {
+                                                    "_type": "TERMINOLOGY_ID",
+                                                    "value": "local"
+                                                },
+                                                "code_string": "at0052"
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "_type": "ELEMENT",
+                                    "name": {
+                                        "_type": "DV_TEXT",
+                                        "value": "Pain indicator"
+                                    },
+                                    "archetype_node_id": "at0084",
+                                    "value": {
+                                        "_type": "DV_CODED_TEXT",
+                                        "value": "Increasing or consisting pain",
+                                        "defining_code": {
+                                            "_type": "CODE_PHRASE",
+                                            "terminology_id": {
+                                                "_type": "TERMINOLOGY_ID",
+                                                "value": "local"
+                                            },
+                                            "code_string": "at0107"
+                                        }
+                                    }
+                                },
+                                {
+                                    "_type": "ELEMENT",
+                                    "name": {
+                                        "_type": "DV_TEXT",
+                                        "value": "Q7 Trajectory"
+                                    },
+                                    "archetype_node_id": "at0053",
+                                    "value": {
+                                        "_type": "DV_ORDINAL",
+                                        "value": 1,
+                                        "symbol": {
+                                            "_type": "DV_CODED_TEXT",
+                                            "value": "Change in trajectory",
+                                            "defining_code": {
+                                                "_type": "CODE_PHRASE",
+                                                "terminology_id": {
+                                                    "_type": "TERMINOLOGY_ID",
+                                                    "value": "local"
+                                                },
+                                                "code_string": "at0055"
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "_type": "ELEMENT",
+                                    "name": {
+                                        "_type": "DV_TEXT",
+                                        "value": "Trajectory indicator"
+                                    },
+                                    "archetype_node_id": "at0087",
+                                    "value": {
+                                        "_type": "DV_CODED_TEXT",
+                                        "value": "Abdominal distension/nausea/bleeding",
+                                        "defining_code": {
+                                            "_type": "CODE_PHRASE",
+                                            "terminology_id": {
+                                                "_type": "TERMINOLOGY_ID",
+                                                "value": "local"
+                                            },
+                                            "code_string": "at0109"
+                                        }
+                                    }
+                                },
+                                {
+                                    "_type": "ELEMENT",
+                                    "name": {
+                                        "_type": "DV_TEXT",
+                                        "value": "Q8 Patient subjective"
+                                    },
+                                    "archetype_node_id": "at0056",
+                                    "value": {
+                                        "_type": "DV_ORDINAL",
+                                        "value": 0,
+                                        "symbol": {
+                                            "_type": "DV_CODED_TEXT",
+                                            "value": "No subjective patient indicator",
+                                            "defining_code": {
+                                                "_type": "CODE_PHRASE",
+                                                "terminology_id": {
+                                                    "_type": "TERMINOLOGY_ID",
+                                                    "value": "local"
+                                                },
+                                                "code_string": "at0057"
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "_type": "ELEMENT",
+                                    "name": {
+                                        "_type": "DV_TEXT",
+                                        "value": "Patient indicator"
+                                    },
+                                    "archetype_node_id": "at0090",
+                                    "value": {
+                                        "_type": "DV_CODED_TEXT",
+                                        "value": "Feeling of impending doom",
+                                        "defining_code": {
+                                            "_type": "CODE_PHRASE",
+                                            "terminology_id": {
+                                                "_type": "TERMINOLOGY_ID",
+                                                "value": "local"
+                                            },
+                                            "code_string": "at0111"
+                                        }
+                                    }
+                                },
+                                {
+                                    "_type": "ELEMENT",
+                                    "name": {
+                                        "_type": "DV_TEXT",
+                                        "value": "Q9 Nurse subjective"
+                                    },
+                                    "archetype_node_id": "at0059",
+                                    "value": {
+                                        "_type": "DV_ORDINAL",
+                                        "value": 0,
+                                        "symbol": {
+                                            "_type": "DV_CODED_TEXT",
+                                            "value": "No nurse subjective indicator",
+                                            "defining_code": {
+                                                "_type": "CODE_PHRASE",
+                                                "terminology_id": {
+                                                    "_type": "TERMINOLOGY_ID",
+                                                    "value": "local"
+                                                },
+                                                "code_string": "at0060"
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "_type": "ELEMENT",
+                                    "name": {
+                                        "_type": "DV_TEXT",
+                                        "value": "Nurse subjective indicator"
+                                    },
+                                    "archetype_node_id": "at0093",
+                                    "value": {
+                                        "_type": "DV_CODED_TEXT",
+                                        "value": "Doesn'\''t look good",
+                                        "defining_code": {
+                                            "_type": "CODE_PHRASE",
+                                            "terminology_id": {
+                                                "_type": "TERMINOLOGY_ID",
+                                                "value": "local"
+                                            },
+                                            "code_string": "at0113"
+                                        }
+                                    }
+                                },
+                                {
+                                    "_type": "ELEMENT",
+                                    "name": {
+                                        "_type": "DV_TEXT",
+                                        "value": "Total score"
+                                    },
+                                    "archetype_node_id": "at0008",
+                                    "value": {
+                                        "_type": "DV_COUNT",
+                                        "magnitude": 5
+                                    }
+                                },
+                                {
+                                    "_type": "ELEMENT",
+                                    "name": {
+                                        "_type": "DV_TEXT",
+                                        "value": "Comment"
+                                    },
+                                    "archetype_node_id": "at0027",
+                                    "value": {
+                                        "_type": "DV_TEXT",
+                                        "value": "Something bad is happening"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}'
