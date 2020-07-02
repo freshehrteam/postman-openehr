@@ -1,0 +1,7 @@
+curl --location --request GET 'https://cdr.code4health.org/rest/openehr/v1/ehr?subject_id=9999999000&subject_namespace=uk.nhs.nhs_number' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'openEHR-AUDIT_DETAILS: ' \
+--header 'openEHR-VERSION: ' \
+--header 'PREFER: ' \
+--header 'Authorization: Basic ODJhMDM5NWYtNjU1Ni00ZmUzLTk5MGEtYzI2NWE5Y2Q2Y2I0OiQyYSQxMCQ2MTlraQ==' \

@@ -1,0 +1,22 @@
+curl --location --request POST 'https://cdr.code4health.org/rest/openehr/v1/ehr' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Prefer: return=representation' \
+--header 'Authorization: Basic ODJhMDM5NWYtNjU1Ni00ZmUzLTk5MGEtYzI2NWE5Y2Q2Y2I0OiQyYSQxMCQ2MTlraQ==' \
+--header 'Cookie: _2269c=http://10.0.0.122:8080' \
+--data-raw '{
+  "_type": "EHR_STATUS",
+  "subject": {
+    "external_ref": {
+      "id": {
+        "_type": "GENERIC_ID",
+        "value": "336678",
+        "scheme": "uk.nhs"
+      },
+      "namespace": "uk.nhs",
+      "type": "PERSON"
+    }
+  },
+  "is_modifiable": "true",
+  "is_queryable": "true"
+}'
