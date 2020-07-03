@@ -1,0 +1,951 @@
+{
+  "templateId" : "DENWIS_Observations",
+  "version" : "2.3",
+  "defaultLanguage" : "en",
+  "languages" : [ "en" ],
+  "tree" : {
+    "id" : "denwis_observations",
+    "name" : "DENWIS Observations",
+    "localizedName" : "DENWIS Observations",
+    "rmType" : "COMPOSITION",
+    "nodeId" : "openEHR-EHR-COMPOSITION.encounter.v1",
+    "min" : 1,
+    "max" : 1,
+    "localizedNames" : {
+      "en" : "DENWIS Observations"
+    },
+    "localizedDescriptions" : {
+      "en" : "Interaction, contact or care event between a subject of care and healthcare provider(s)."
+    },
+    "aqlPath" : "",
+    "children" : [ {
+      "id" : "context",
+      "rmType" : "EVENT_CONTEXT",
+      "nodeId" : "",
+      "min" : 1,
+      "max" : 1,
+      "aqlPath" : "/context",
+      "children" : [ {
+        "id" : "start_time",
+        "name" : "Start_time",
+        "rmType" : "DV_DATE_TIME",
+        "min" : 1,
+        "max" : 1,
+        "aqlPath" : "/context/start_time",
+        "inputs" : [ {
+          "type" : "DATETIME"
+        } ],
+        "inContext" : true
+      }, {
+        "id" : "setting",
+        "name" : "Setting",
+        "rmType" : "DV_CODED_TEXT",
+        "min" : 1,
+        "max" : 1,
+        "aqlPath" : "/context/setting",
+        "inputs" : [ {
+          "suffix" : "code",
+          "type" : "TEXT"
+        }, {
+          "suffix" : "value",
+          "type" : "TEXT"
+        } ],
+        "inContext" : true
+      } ]
+    }, {
+      "id" : "denwis",
+      "name" : "DENWIS",
+      "localizedName" : "DENWIS",
+      "rmType" : "OBSERVATION",
+      "nodeId" : "openEHR-EHR-OBSERVATION.denwis.v0",
+      "min" : 0,
+      "max" : 1,
+      "localizedNames" : {
+        "en" : "DENWIS"
+      },
+      "localizedDescriptions" : {
+        "en" : "Dutch Early Nurse Worry Indicator Score (DENWIS)"
+      },
+      "aqlPath" : "/content[openEHR-EHR-OBSERVATION.denwis.v0]",
+      "children" : [ {
+        "id" : "q1_breathing",
+        "name" : "Q1 Breathing",
+        "localizedName" : "Q1 Breathing",
+        "rmType" : "DV_ORDINAL",
+        "nodeId" : "at0028",
+        "min" : 0,
+        "max" : 1,
+        "localizedNames" : {
+          "en" : "Q1 Breathing"
+        },
+        "localizedDescriptions" : {
+          "en" : "Nurse recorded changes in breathing."
+        },
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.denwis.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0028]/value",
+        "inputs" : [ {
+          "type" : "CODED_TEXT",
+          "list" : [ {
+            "value" : "at0032",
+            "label" : "No change in breathing",
+            "localizedLabels" : {
+              "en" : "No change in breathing"
+            },
+            "localizedDescriptions" : {
+              "en" : "No change in breathing."
+            },
+            "ordinal" : 0
+          }, {
+            "value" : "at0031",
+            "label" : "Change in breathing",
+            "localizedLabels" : {
+              "en" : "Change in breathing"
+            },
+            "localizedDescriptions" : {
+              "en" : "Change in breathing."
+            },
+            "ordinal" : 1
+          } ]
+        } ]
+      }, {
+        "id" : "breathing_indicator",
+        "name" : "Breathing indicator",
+        "localizedName" : "Breathing indicator",
+        "rmType" : "DV_CODED_TEXT",
+        "nodeId" : "at0062",
+        "min" : 0,
+        "max" : -1,
+        "localizedNames" : {
+          "en" : "Breathing indicator"
+        },
+        "localizedDescriptions" : {
+          "en" : "Nurse recorded the indication that there are changes in breathing."
+        },
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.denwis.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0062]/value",
+        "inputs" : [ {
+          "suffix" : "code",
+          "type" : "CODED_TEXT",
+          "list" : [ {
+            "value" : "at0067",
+            "label" : "Noisy breathing",
+            "localizedLabels" : {
+              "en" : "Noisy breathing"
+            },
+            "localizedDescriptions" : {
+              "en" : "Noisy breathing."
+            }
+          }, {
+            "value" : "at0068",
+            "label" : "Short of breath",
+            "localizedLabels" : {
+              "en" : "Short of breath"
+            },
+            "localizedDescriptions" : {
+              "en" : "Short of breath."
+            }
+          }, {
+            "value" : "at0069",
+            "label" : "Unable to speak full sentences",
+            "localizedLabels" : {
+              "en" : "Unable to speak full sentences"
+            },
+            "localizedDescriptions" : {
+              "en" : "Unable to speak in full sentences."
+            }
+          }, {
+            "value" : "at0070",
+            "label" : "Use accessory muscles",
+            "localizedLabels" : {
+              "en" : "Use accessory muscles"
+            },
+            "localizedDescriptions" : {
+              "en" : "Use accessory muscles."
+            }
+          } ],
+          "listOpen" : true
+        }, {
+          "suffix" : "other",
+          "type" : "TEXT"
+        } ]
+      }, {
+        "id" : "q2_circulation",
+        "name" : "Q2 Circulation",
+        "localizedName" : "Q2 Circulation",
+        "rmType" : "DV_ORDINAL",
+        "nodeId" : "at0033",
+        "min" : 0,
+        "max" : 1,
+        "localizedNames" : {
+          "en" : "Q2 Circulation"
+        },
+        "localizedDescriptions" : {
+          "en" : "Nurse recorded changes in circulation."
+        },
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.denwis.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0033]/value",
+        "inputs" : [ {
+          "type" : "CODED_TEXT",
+          "list" : [ {
+            "value" : "at0037",
+            "label" : "No change in circulation",
+            "localizedLabels" : {
+              "en" : "No change in circulation"
+            },
+            "localizedDescriptions" : {
+              "en" : "No change in circulation."
+            },
+            "ordinal" : 0
+          }, {
+            "value" : "at0036",
+            "label" : "Change in circulation",
+            "localizedLabels" : {
+              "en" : "Change in circulation"
+            },
+            "localizedDescriptions" : {
+              "en" : "Change in circulation."
+            },
+            "ordinal" : 1
+          } ]
+        } ]
+      }, {
+        "id" : "circulation_indicator",
+        "name" : "Circulation indicator",
+        "localizedName" : "Circulation indicator",
+        "rmType" : "DV_CODED_TEXT",
+        "nodeId" : "at0071",
+        "min" : 0,
+        "max" : -1,
+        "localizedNames" : {
+          "en" : "Circulation indicator"
+        },
+        "localizedDescriptions" : {
+          "en" : "Nurse recorded changes in circulation."
+        },
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.denwis.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0071]/value",
+        "inputs" : [ {
+          "suffix" : "code",
+          "type" : "CODED_TEXT",
+          "list" : [ {
+            "value" : "at0096",
+            "label" : "Colour changes: pale, grey",
+            "localizedLabels" : {
+              "en" : "Colour changes: pale, grey"
+            },
+            "localizedDescriptions" : {
+              "en" : "Colour changes: pale, grey."
+            }
+          }, {
+            "value" : "at0097",
+            "label" : "Sweaty/clammy",
+            "localizedLabels" : {
+              "en" : "Sweaty/clammy"
+            },
+            "localizedDescriptions" : {
+              "en" : "Sweaty/clammy."
+            }
+          }, {
+            "value" : "at0098",
+            "label" : "Coldness",
+            "localizedLabels" : {
+              "en" : "Coldness"
+            },
+            "localizedDescriptions" : {
+              "en" : "Coldness."
+            }
+          }, {
+            "value" : "at0099",
+            "label" : "Impaired perfusion",
+            "localizedLabels" : {
+              "en" : "Impaired perfusion"
+            },
+            "localizedDescriptions" : {
+              "en" : "Impaired perfusion."
+            }
+          } ],
+          "listOpen" : true
+        }, {
+          "suffix" : "other",
+          "type" : "TEXT"
+        } ]
+      }, {
+        "id" : "q3_temperature",
+        "name" : "Q3 Temperature",
+        "localizedName" : "Q3 Temperature",
+        "rmType" : "DV_ORDINAL",
+        "nodeId" : "at0038",
+        "min" : 0,
+        "max" : 1,
+        "localizedNames" : {
+          "en" : "Q3 Temperature"
+        },
+        "localizedDescriptions" : {
+          "en" : "Nurse recorded changes in temperature."
+        },
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.denwis.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0038]/value",
+        "inputs" : [ {
+          "type" : "CODED_TEXT",
+          "list" : [ {
+            "value" : "at0042",
+            "label" : "No change in temperature",
+            "localizedLabels" : {
+              "en" : "No change in temperature"
+            },
+            "localizedDescriptions" : {
+              "en" : "No change in temperature."
+            },
+            "ordinal" : 0
+          }, {
+            "value" : "at0105",
+            "label" : "Change in temperature",
+            "localizedLabels" : {
+              "en" : "Change in temperature"
+            },
+            "localizedDescriptions" : {
+              "en" : "Change in temperature."
+            },
+            "ordinal" : 1
+          } ]
+        } ]
+      }, {
+        "id" : "temperature_indicator",
+        "name" : "Temperature indicator",
+        "localizedName" : "Temperature indicator",
+        "rmType" : "DV_CODED_TEXT",
+        "nodeId" : "at0076",
+        "min" : 0,
+        "max" : -1,
+        "localizedNames" : {
+          "en" : "Temperature indicator"
+        },
+        "localizedDescriptions" : {
+          "en" : "Nurse recorded changes in temperature."
+        },
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.denwis.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0076]/value",
+        "inputs" : [ {
+          "suffix" : "code",
+          "type" : "CODED_TEXT",
+          "list" : [ {
+            "value" : "at0100",
+            "label" : "Rigors",
+            "localizedLabels" : {
+              "en" : "Rigors"
+            },
+            "localizedDescriptions" : {
+              "en" : "Rigors."
+            }
+          } ],
+          "listOpen" : true
+        }, {
+          "suffix" : "other",
+          "type" : "TEXT"
+        } ]
+      }, {
+        "id" : "q4_mentation",
+        "name" : "Q4 Mentation",
+        "localizedName" : "Q4 Mentation",
+        "rmType" : "DV_ORDINAL",
+        "nodeId" : "at0043",
+        "min" : 0,
+        "max" : 1,
+        "localizedNames" : {
+          "en" : "Q4 Mentation"
+        },
+        "localizedDescriptions" : {
+          "en" : "Nurse recorded changes in mentation."
+        },
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.denwis.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0043]/value",
+        "inputs" : [ {
+          "type" : "CODED_TEXT",
+          "list" : [ {
+            "value" : "at0046",
+            "label" : "No change in mentation",
+            "localizedLabels" : {
+              "en" : "No change in mentation"
+            },
+            "localizedDescriptions" : {
+              "en" : "No change in mentation."
+            },
+            "ordinal" : 0
+          }, {
+            "value" : "at0045",
+            "label" : "Change in mentation",
+            "localizedLabels" : {
+              "en" : "Change in mentation"
+            },
+            "localizedDescriptions" : {
+              "en" : "Change in mentation."
+            },
+            "ordinal" : 1
+          } ]
+        } ]
+      }, {
+        "id" : "mentation_indicator",
+        "name" : "Mentation indicator",
+        "localizedName" : "Mentation indicator",
+        "rmType" : "DV_CODED_TEXT",
+        "nodeId" : "at0078",
+        "min" : 0,
+        "max" : -1,
+        "localizedNames" : {
+          "en" : "Mentation indicator"
+        },
+        "localizedDescriptions" : {
+          "en" : "Nurse recorded changes in mentation."
+        },
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.denwis.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0078]/value",
+        "inputs" : [ {
+          "suffix" : "code",
+          "type" : "CODED_TEXT",
+          "list" : [ {
+            "value" : "at0101",
+            "label" : "Lethargic",
+            "localizedLabels" : {
+              "en" : "Lethargic"
+            },
+            "localizedDescriptions" : {
+              "en" : "Lethargic."
+            }
+          }, {
+            "value" : "at0102",
+            "label" : "Confused",
+            "localizedLabels" : {
+              "en" : "Confused"
+            },
+            "localizedDescriptions" : {
+              "en" : "Confused."
+            }
+          } ],
+          "listOpen" : true
+        }, {
+          "suffix" : "other",
+          "type" : "TEXT"
+        } ]
+      }, {
+        "id" : "q5_agitation",
+        "name" : "Q5 Agitation",
+        "localizedName" : "Q5 Agitation",
+        "rmType" : "DV_ORDINAL",
+        "nodeId" : "at0047",
+        "min" : 0,
+        "max" : 1,
+        "localizedNames" : {
+          "en" : "Q5 Agitation"
+        },
+        "localizedDescriptions" : {
+          "en" : "Nurse recorded changes in agitation."
+        },
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.denwis.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0047]/value",
+        "inputs" : [ {
+          "type" : "CODED_TEXT",
+          "list" : [ {
+            "value" : "at0048",
+            "label" : "No agitation",
+            "localizedLabels" : {
+              "en" : "No agitation"
+            },
+            "localizedDescriptions" : {
+              "en" : "No agitation."
+            },
+            "ordinal" : 0
+          }, {
+            "value" : "at0049",
+            "label" : "Agitation",
+            "localizedLabels" : {
+              "en" : "Agitation"
+            },
+            "localizedDescriptions" : {
+              "en" : "Agitation."
+            },
+            "ordinal" : 1
+          } ]
+        } ]
+      }, {
+        "id" : "agitation_indicator",
+        "name" : "Agitation indicator",
+        "localizedName" : "Agitation indicator",
+        "rmType" : "DV_CODED_TEXT",
+        "nodeId" : "at0081",
+        "min" : 0,
+        "max" : -1,
+        "localizedNames" : {
+          "en" : "Agitation indicator"
+        },
+        "localizedDescriptions" : {
+          "en" : "Nurse recorded changes in agitation."
+        },
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.denwis.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0081]/value",
+        "inputs" : [ {
+          "suffix" : "code",
+          "type" : "CODED_TEXT",
+          "list" : [ {
+            "value" : "at0103",
+            "label" : "Restless",
+            "localizedLabels" : {
+              "en" : "Restless"
+            },
+            "localizedDescriptions" : {
+              "en" : "Restless."
+            }
+          }, {
+            "value" : "at0104",
+            "label" : "Anxious",
+            "localizedLabels" : {
+              "en" : "Anxious"
+            },
+            "localizedDescriptions" : {
+              "en" : "Anxious."
+            }
+          } ],
+          "listOpen" : true
+        }, {
+          "suffix" : "other",
+          "type" : "TEXT"
+        } ]
+      }, {
+        "id" : "q6_pain",
+        "name" : "Q6 Pain",
+        "localizedName" : "Q6 Pain",
+        "rmType" : "DV_ORDINAL",
+        "nodeId" : "at0050",
+        "min" : 0,
+        "max" : 1,
+        "localizedNames" : {
+          "en" : "Q6 Pain"
+        },
+        "localizedDescriptions" : {
+          "en" : "Nurse recorded changes in pain."
+        },
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.denwis.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0050]/value",
+        "inputs" : [ {
+          "type" : "CODED_TEXT",
+          "list" : [ {
+            "value" : "at0051",
+            "label" : "No change in pain",
+            "localizedLabels" : {
+              "en" : "No change in pain"
+            },
+            "localizedDescriptions" : {
+              "en" : "No change in pain."
+            },
+            "ordinal" : 0
+          }, {
+            "value" : "at0052",
+            "label" : "Change in pain",
+            "localizedLabels" : {
+              "en" : "Change in pain"
+            },
+            "localizedDescriptions" : {
+              "en" : "Change in pain."
+            },
+            "ordinal" : 1
+          } ]
+        } ]
+      }, {
+        "id" : "pain_indicator",
+        "name" : "Pain indicator",
+        "localizedName" : "Pain indicator",
+        "rmType" : "DV_CODED_TEXT",
+        "nodeId" : "at0084",
+        "min" : 0,
+        "max" : -1,
+        "localizedNames" : {
+          "en" : "Pain indicator"
+        },
+        "localizedDescriptions" : {
+          "en" : "Nurse recorded changes in pain."
+        },
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.denwis.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0084]/value",
+        "inputs" : [ {
+          "suffix" : "code",
+          "type" : "CODED_TEXT",
+          "list" : [ {
+            "value" : "at0106",
+            "label" : "New pain",
+            "localizedLabels" : {
+              "en" : "New pain"
+            },
+            "localizedDescriptions" : {
+              "en" : "New pain."
+            }
+          }, {
+            "value" : "at0107",
+            "label" : "Increasing or consisting pain",
+            "localizedLabels" : {
+              "en" : "Increasing or consisting pain"
+            },
+            "localizedDescriptions" : {
+              "en" : "Increasing or consisting pain."
+            }
+          } ],
+          "listOpen" : true
+        }, {
+          "suffix" : "other",
+          "type" : "TEXT"
+        } ]
+      }, {
+        "id" : "q7_trajectory",
+        "name" : "Q7 Trajectory",
+        "localizedName" : "Q7 Trajectory",
+        "rmType" : "DV_ORDINAL",
+        "nodeId" : "at0053",
+        "min" : 0,
+        "max" : 1,
+        "localizedNames" : {
+          "en" : "Q7 Trajectory"
+        },
+        "localizedDescriptions" : {
+          "en" : "Nurse recorded unexpected trajectory."
+        },
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.denwis.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0053]/value",
+        "inputs" : [ {
+          "type" : "CODED_TEXT",
+          "list" : [ {
+            "value" : "at0054",
+            "label" : "No change in trajectory",
+            "localizedLabels" : {
+              "en" : "No change in trajectory"
+            },
+            "localizedDescriptions" : {
+              "en" : "No change in trajectory."
+            },
+            "ordinal" : 0
+          }, {
+            "value" : "at0055",
+            "label" : "Change in trajectory",
+            "localizedLabels" : {
+              "en" : "Change in trajectory"
+            },
+            "localizedDescriptions" : {
+              "en" : "Change in trajectory."
+            },
+            "ordinal" : 1
+          } ]
+        } ]
+      }, {
+        "id" : "trajectory_indicator",
+        "name" : "Trajectory indicator",
+        "localizedName" : "Trajectory indicator",
+        "rmType" : "DV_CODED_TEXT",
+        "nodeId" : "at0087",
+        "min" : 0,
+        "max" : -1,
+        "localizedNames" : {
+          "en" : "Trajectory indicator"
+        },
+        "localizedDescriptions" : {
+          "en" : "Nurse recorded unexpected trajectory."
+        },
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.denwis.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0087]/value",
+        "inputs" : [ {
+          "suffix" : "code",
+          "type" : "CODED_TEXT",
+          "list" : [ {
+            "value" : "at0108",
+            "label" : "No progress",
+            "localizedLabels" : {
+              "en" : "No progress"
+            },
+            "localizedDescriptions" : {
+              "en" : "No progress."
+            }
+          }, {
+            "value" : "at0109",
+            "label" : "Abdominal distension/nausea/bleeding",
+            "localizedLabels" : {
+              "en" : "Abdominal distension/nausea/bleeding"
+            },
+            "localizedDescriptions" : {
+              "en" : "Abdominal distension/nausea/bleeding."
+            }
+          } ],
+          "listOpen" : true
+        }, {
+          "suffix" : "other",
+          "type" : "TEXT"
+        } ]
+      }, {
+        "id" : "q8_patient_subjective",
+        "name" : "Q8 Patient subjective",
+        "localizedName" : "Q8 Patient subjective",
+        "rmType" : "DV_ORDINAL",
+        "nodeId" : "at0056",
+        "min" : 0,
+        "max" : 1,
+        "localizedNames" : {
+          "en" : "Q8 Patient subjective"
+        },
+        "localizedDescriptions" : {
+          "en" : "Nurse recorded patient indicators."
+        },
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.denwis.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0056]/value",
+        "inputs" : [ {
+          "type" : "CODED_TEXT",
+          "list" : [ {
+            "value" : "at0057",
+            "label" : "No subjective patient indicator",
+            "localizedLabels" : {
+              "en" : "No subjective patient indicator"
+            },
+            "localizedDescriptions" : {
+              "en" : "No subjective patient indicator."
+            },
+            "ordinal" : 0
+          }, {
+            "value" : "at0058",
+            "label" : "Subjective patient indicator",
+            "localizedLabels" : {
+              "en" : "Subjective patient indicator"
+            },
+            "localizedDescriptions" : {
+              "en" : "Subjective patient indicator."
+            },
+            "ordinal" : 1
+          } ]
+        } ]
+      }, {
+        "id" : "patient_indicator",
+        "name" : "Patient indicator",
+        "localizedName" : "Patient indicator",
+        "rmType" : "DV_CODED_TEXT",
+        "nodeId" : "at0090",
+        "min" : 0,
+        "max" : -1,
+        "localizedNames" : {
+          "en" : "Patient indicator"
+        },
+        "localizedDescriptions" : {
+          "en" : "Nurse recorded patient indicators."
+        },
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.denwis.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0090]/value",
+        "inputs" : [ {
+          "suffix" : "code",
+          "type" : "CODED_TEXT",
+          "list" : [ {
+            "value" : "at0110",
+            "label" : "Not feeling well",
+            "localizedLabels" : {
+              "en" : "Not feeling well"
+            },
+            "localizedDescriptions" : {
+              "en" : "Not feeling well."
+            }
+          }, {
+            "value" : "at0111",
+            "label" : "Feeling of impending doom",
+            "localizedLabels" : {
+              "en" : "Feeling of impending doom"
+            },
+            "localizedDescriptions" : {
+              "en" : "Feeling of impending doom."
+            }
+          } ],
+          "listOpen" : true
+        }, {
+          "suffix" : "other",
+          "type" : "TEXT"
+        } ]
+      }, {
+        "id" : "q9_nurse_subjective",
+        "name" : "Q9 Nurse subjective",
+        "localizedName" : "Q9 Nurse subjective",
+        "rmType" : "DV_ORDINAL",
+        "nodeId" : "at0059",
+        "min" : 0,
+        "max" : 1,
+        "localizedNames" : {
+          "en" : "Q9 Nurse subjective"
+        },
+        "localizedDescriptions" : {
+          "en" : "Nurse recorded subjective observation."
+        },
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.denwis.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0059]/value",
+        "inputs" : [ {
+          "type" : "CODED_TEXT",
+          "list" : [ {
+            "value" : "at0060",
+            "label" : "No nurse subjective indicator",
+            "localizedLabels" : {
+              "en" : "No nurse subjective indicator"
+            },
+            "localizedDescriptions" : {
+              "en" : "No nurse subjective indicator."
+            },
+            "ordinal" : 0
+          }, {
+            "value" : "at0061",
+            "label" : "Nurse subjective indicator",
+            "localizedLabels" : {
+              "en" : "Nurse subjective indicator"
+            },
+            "localizedDescriptions" : {
+              "en" : "Nurse subjective indicator."
+            },
+            "ordinal" : 1
+          } ]
+        } ]
+      }, {
+        "id" : "nurse_subjective_indicator",
+        "name" : "Nurse subjective indicator",
+        "localizedName" : "Nurse subjective indicator",
+        "rmType" : "DV_CODED_TEXT",
+        "nodeId" : "at0093",
+        "min" : 0,
+        "max" : -1,
+        "localizedNames" : {
+          "en" : "Nurse subjective indicator"
+        },
+        "localizedDescriptions" : {
+          "en" : "Nurse recorded subjective observation."
+        },
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.denwis.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0093]/value",
+        "inputs" : [ {
+          "suffix" : "code",
+          "type" : "CODED_TEXT",
+          "list" : [ {
+            "value" : "at0112",
+            "label" : "Change in behaviour",
+            "localizedLabels" : {
+              "en" : "Change in behaviour"
+            },
+            "localizedDescriptions" : {
+              "en" : "Change in behaviour."
+            }
+          }, {
+            "value" : "at0113",
+            "label" : "Doesn't look good",
+            "localizedLabels" : {
+              "en" : "Doesn't look good"
+            },
+            "localizedDescriptions" : {
+              "en" : "Doesn't look good."
+            }
+          } ],
+          "listOpen" : true
+        }, {
+          "suffix" : "other",
+          "type" : "TEXT"
+        } ]
+      }, {
+        "id" : "total_score",
+        "name" : "Total score",
+        "localizedName" : "Total score",
+        "rmType" : "DV_COUNT",
+        "nodeId" : "at0008",
+        "min" : 0,
+        "max" : 1,
+        "localizedNames" : {
+          "en" : "Total score"
+        },
+        "localizedDescriptions" : {
+          "en" : "The total score for the four questions."
+        },
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.denwis.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0008]/value",
+        "inputs" : [ {
+          "type" : "INTEGER",
+          "validation" : {
+            "range" : {
+              "minOp" : ">=",
+              "min" : 0,
+              "maxOp" : "<=",
+              "max" : 9
+            }
+          }
+        } ]
+      }, {
+        "id" : "comment",
+        "name" : "Comment",
+        "localizedName" : "Comment",
+        "rmType" : "DV_TEXT",
+        "nodeId" : "at0027",
+        "min" : 0,
+        "max" : 1,
+        "localizedNames" : {
+          "en" : "Comment"
+        },
+        "localizedDescriptions" : {
+          "en" : "Narrative comment."
+        },
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.denwis.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0027]/value",
+        "inputs" : [ {
+          "type" : "TEXT"
+        } ]
+      }, {
+        "id" : "time",
+        "name" : "Time",
+        "rmType" : "DV_DATE_TIME",
+        "min" : 1,
+        "max" : 1,
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.denwis.v0]/data[at0001]/events[at0002]/time",
+        "inputs" : [ {
+          "type" : "DATETIME"
+        } ],
+        "inContext" : true
+      }, {
+        "id" : "language",
+        "name" : "Language",
+        "rmType" : "CODE_PHRASE",
+        "min" : 1,
+        "max" : 1,
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.denwis.v0]/language",
+        "inContext" : true
+      }, {
+        "id" : "encoding",
+        "name" : "Encoding",
+        "rmType" : "CODE_PHRASE",
+        "min" : 1,
+        "max" : 1,
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.denwis.v0]/encoding",
+        "inContext" : true
+      }, {
+        "id" : "subject",
+        "name" : "Subject",
+        "rmType" : "PARTY_PROXY",
+        "min" : 1,
+        "max" : 1,
+        "aqlPath" : "/content[openEHR-EHR-OBSERVATION.denwis.v0]/subject",
+        "inContext" : true
+      } ]
+    }, {
+      "id" : "category",
+      "rmType" : "DV_CODED_TEXT",
+      "nodeId" : "",
+      "min" : 1,
+      "max" : 1,
+      "aqlPath" : "/category",
+      "inputs" : [ {
+        "suffix" : "code",
+        "type" : "CODED_TEXT",
+        "list" : [ {
+          "value" : "433",
+          "localizedLabels" : {
+            "en" : ""
+          }
+        } ],
+        "terminology" : "openehr"
+      } ],
+      "inContext" : true
+    }, {
+      "id" : "language",
+      "name" : "Language",
+      "rmType" : "CODE_PHRASE",
+      "min" : 1,
+      "max" : 1,
+      "aqlPath" : "/language",
+      "inContext" : true
+    }, {
+      "id" : "territory",
+      "name" : "Territory",
+      "rmType" : "CODE_PHRASE",
+      "min" : 1,
+      "max" : 1,
+      "aqlPath" : "/territory",
+      "inContext" : true
+    }, {
+      "id" : "composer",
+      "name" : "Composer",
+      "rmType" : "PARTY_PROXY",
+      "min" : 1,
+      "max" : 1,
+      "aqlPath" : "/composer",
+      "inContext" : true
+    } ]
+  }
+}
